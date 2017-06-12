@@ -71,7 +71,7 @@ var PetListView = Backbone.View.extend({
     console.log(petData);
 
     var pet = new Pet(petData);
-    console.log( pet.toJSON() );
+    // console.log( pet.toJSON() );
     this.model.create( pet );
   }
 });
