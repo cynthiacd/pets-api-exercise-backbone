@@ -24,7 +24,7 @@ var PetView = Backbone.View.extend({
 
   onClick: function(event) {
     console.log("you clicked on a pet");
-    this.trigger("onClick", this.model)
+    this.trigger("onClickPet", this.model)
   }
 
 });

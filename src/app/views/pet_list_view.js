@@ -3,6 +3,7 @@ import Backbone from 'backbone';
 // import $ from 'jquery';
 
 import PetView from './pet_view';
+import Pet from '../models/pet';
 
 var PetListView = Backbone.View.extend({
 
@@ -28,7 +29,7 @@ var PetListView = Backbone.View.extend({
       // var view = petView.render();
       that.$('#pet-list').append( petView.render().$el );
 
-      that.listenTo( petView, "onClick", that.onClickDisplayDetails)
+      that.listenTo( petView, "onClickPet", that.onClickDisplayDetails );
     });
     return this;
   },
@@ -41,8 +42,38 @@ var PetListView = Backbone.View.extend({
     this.$('#pet').empty();
     this.$('#pet').html(petDetailsCompiled);
     // this.$('#pet').show();
-  }
+  },
 
+  events: {
+    'click .btn-save': 'onSave',
+    'click .btn-cancel': 'onCancel'
+  },
+
+  onSave: function(event){
+    console.log("someone clicked the save button");
+    // var name = this.$('#name').val();
+    // var breed = this.$('#breed').val();
+    // var age = this.$('#age').val();
+    var vaccinated = this.$('#vaccinated').val();
+    if ( vaccinated === "on" ) {
+      vaccinated = true;
+    } else {
+      vaccinated = false;
+    }
+
+    var petData = {
+      "name": this.$('#name').val(),
+      "breed": this.$('#breed').val(),
+      "age": parseInt( this.$('#age').val() ),
+      "vaccinated": vaccinated
+    };
+
+    console.log(petData);
+
+    var pet = new Pet(petData);
+    console.log( pet.toJSON() );
+    this.model.create( pet );
+  }
 });
 
 export default PetListView;

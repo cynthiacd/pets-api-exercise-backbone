@@ -19,14 +19,14 @@
         <div class="columns">
           <label>
             Name
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" required>
           </label>
           <label>
-            Email
-            <input type="text" name="breed" id="breed">
+            Breed
+            <input type="text" name="breed" id="breed" required>
           </label>
           <label>
-            Phone
+            Age
             <input type="text" name="age" id="age">
           </label>
           <label>
@@ -51,9 +51,10 @@
     </script>
 
     <script id="pet-info-template" type="text/template">
-      <h3>Name: <%- pet.name %></h3>
+      <h4>Name: <%- pet.name %></h4>
       <h4>Age: <%- pet.age %></h4>
       <h4>Breed: <%- pet.breed %></h4>
+      <h4 class="vaccinated-header">Vaccinated: </h4>
       <% if(pet.vaccinated){ %>
         <input type="checkbox" name="vaccinated" checked="checked">
       <% }else{ %>

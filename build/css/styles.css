@@ -10,8 +10,15 @@ header {
 }
 
 #pet {
-  /*display: none;*/
-  /*border: solid;*/
+  text-align: center;
+}
+
+input {
+  display: inline-block;
+}
+
+.vaccinated-header {
+  display: inline-block;
 }
 
 #completed-checkbox {
