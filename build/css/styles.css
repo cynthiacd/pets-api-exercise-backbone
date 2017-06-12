@@ -9,6 +9,11 @@ header {
   padding: 0.5rem;
 }
 
+#pet {
+  /*display: none;*/
+  border: solid;
+}
+
 #completed-checkbox {
   display: inline;
 }

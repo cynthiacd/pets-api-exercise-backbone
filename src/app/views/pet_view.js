@@ -12,13 +12,19 @@ var PetView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log("rendering the PetView");
-
+    // console.log("rendering the PetView");
     var compiledTemplate = this.template( { pet: this.model.toJSON() });
-    console.log(compiledTemplate);
-
     this.$el.html(compiledTemplate);
     return this;
+  },
+
+  events: {
+    'click': 'onClick'
+  },
+
+  onClick: function(event) {
+    console.log("you clicked on a pet");
+    this.trigger("onClick", this.model)
   }
 
 });

@@ -14,10 +14,12 @@ $(document).ready(function() {
 
   var petListView = new PetListView({
     model: petList,
-    template: _.template( $('#pet-card-template').html() ),
+    templateCard: _.template( $('#pet-card-template').html() ),
+    templateDetails: _.template( $('#pet-info-template').html() ), 
     el: 'main'
   });
 
   // if you call render now the ajax call hasn't completed so it wont render anything
+  // remember js is asyc
   // petListView.render();
 });
