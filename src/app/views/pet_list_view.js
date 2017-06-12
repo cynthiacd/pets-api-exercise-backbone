@@ -43,6 +43,10 @@ var PetListView = Backbone.View.extend({
     this.$('#pet').html(petDetailsCompiled);
     window.scrollTo(0,0);
     // this.$('#pet').show();
+
+    // if you want to do this you have to make a new view for the details box so you
+    // can assign a model
+    // this.$('.btn-delete').click( pet, this.onDelete );
   },
 
   events: {
