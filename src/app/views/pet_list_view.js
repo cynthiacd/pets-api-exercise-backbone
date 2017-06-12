@@ -23,8 +23,8 @@ var PetListView = Backbone.View.extend({
         tagName: 'li'
       });
 
-      var view = petView.render();
-      that.$('#pet-list').append(view.$el);
+      // var view = petView.render();
+      that.$('#pet-list').append( petView.render().$el );
     });
     return this;
   }

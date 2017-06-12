@@ -6,8 +6,9 @@ import PetList from 'app/collections/pet_list';
 import PetListView from 'app/views/pet_list_view';
 
 var petList = new PetList();
+// fetch can take a callback function look up
 petList.fetch();
-console.log(petList);
+// console.log(petList);
 
 $(document).ready(function() {
 
@@ -17,5 +18,6 @@ $(document).ready(function() {
     el: 'main'
   });
 
-  petListView.render();
+  // if you call render now the ajax call hasn't completed so it wont render anything
+  // petListView.render();
 });
