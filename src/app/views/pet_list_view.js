@@ -41,19 +41,20 @@ var PetListView = Backbone.View.extend({
 
     this.$('#pet').empty();
     this.$('#pet').html(petDetailsCompiled);
+    window.scrollTo(0,0);
     // this.$('#pet').show();
   },
 
   events: {
     'click .btn-save': 'onSave',
-    'click .btn-cancel': 'onCancel'
+    'click .btn-delete': 'onDelete'
   },
 
   onSave: function(event){
     console.log("someone clicked the save button");
-    // var name = this.$('#name').val();
-    // var breed = this.$('#breed').val();
-    // var age = this.$('#age').val();
+
+
+
     var vaccinated = this.$('#vaccinated').val();
     if ( vaccinated === "on" ) {
       vaccinated = true;
@@ -73,6 +74,14 @@ var PetListView = Backbone.View.extend({
     var pet = new Pet(petData);
     // console.log( pet.toJSON() );
     this.model.create( pet );
+    this.clearForm();
+  },
+
+  clearForm: function(){
+    this.$('#name').val('');
+    this.$('#breed').val('');
+    this.$('#age').val('');
+    this.$('#vaccinated').prop('checked', false);
   }
 });
 
