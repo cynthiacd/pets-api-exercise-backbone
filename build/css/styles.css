@@ -1,5 +1,7 @@
 @include foundation-everything;
-
+/*.button {
+  display: inline;
+}*/
 main {
     background: lightblue;
 }

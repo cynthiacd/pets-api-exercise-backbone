@@ -46,14 +46,11 @@ var PetListView = Backbone.View.extend({
   },
 
   events: {
-    'click .btn-save': 'onSave',
-    'click .btn-delete': 'onDelete'
+    'click .btn-save': 'onSave'
   },
 
   onSave: function(event){
     console.log("someone clicked the save button");
-
-
 
     var vaccinated = this.$('#vaccinated').val();
     if ( vaccinated === "on" ) {
@@ -77,7 +74,7 @@ var PetListView = Backbone.View.extend({
     this.clearForm();
   },
 
-  clearForm: function(){
+  clearForm: function() {
     this.$('#name').val('');
     this.$('#breed').val('');
     this.$('#age').val('');
