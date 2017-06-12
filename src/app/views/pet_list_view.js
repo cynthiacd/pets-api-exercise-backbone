@@ -40,7 +40,7 @@ var PetListView = Backbone.View.extend({
 
     this.$('#pet').empty();
     this.$('#pet').html(petDetailsCompiled);
-    this.$('#pet').show();
+    // this.$('#pet').show();
   }
 
 });

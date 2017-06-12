@@ -12,7 +12,33 @@
     <header>
       <h1>Pets!</h1>
     </header>
-    <main>
+    <main class="row">
+
+      <section id="form">
+        <h3>Add A New Pet</h3>
+        <div class="columns">
+          <label>
+            Name
+            <input type="text" name="name" id="name">
+          </label>
+          <label>
+            Email
+            <input type="text" name="breed" id="breed">
+          </label>
+          <label>
+            Phone
+            <input type="text" name="age" id="age">
+          </label>
+          <label>
+            Vaccinated
+            <input type="checkbox" name="vaccinated" id="vaccinated">
+          </label>
+          <!-- try to add require to the buttons so you can't make blank contacts -->
+          <h3 class="button btn-save">Save</h3>
+          <h3 class="button btn-cancel">Cancel</h3>
+        </div>
+      </section>
+
       <section id='pet'></section>
       <section id='pet-list'></section>
       <section id='new-pet'></section>
