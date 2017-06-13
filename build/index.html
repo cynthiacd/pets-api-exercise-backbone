@@ -35,6 +35,7 @@
           </label>
           <!-- try to add require to the buttons so you can't make blank contacts -->
           <h3 class="button btn-save">Add Pet</h3>
+
         </div>
       </section>
 
@@ -46,19 +47,25 @@
     <!-- Templates -->
 
     <script id="pet-card-template" type="text/template">
-      <%- pet.name %>
+      <button class="button"><%- pet.name %></button>
       <button class="button btn-delete">Delete</button>
+      <h4 class="vaccinated-header">Vaccinated: </h4>
+      <% if(pet.vaccinated){ %>
+        <input type="checkbox" name="vaccinated" checked="checked" class="vaccinated-checkbox">
+      <% }else{ %>
+        <input type="checkbox" name="vaccinated" class="vaccinated-checkbox">
+      <% } %>
     </script>
 
     <script id="pet-info-template" type="text/template">
       <h4>Name: <%- pet.name %></h4>
       <h4>Age: <%- pet.age %></h4>
       <h4>Breed: <%- pet.breed %></h4>
-      <h4 class="vaccinated-header">Vaccinated: </h4>
+      <h4 class="vaccinated-header">Vaccinated:
       <% if(pet.vaccinated){ %>
-        <input type="checkbox" name="vaccinated" checked="checked">
+         Yes </h4>
       <% }else{ %>
-        <input type="checkbox" name="vaccinated">
+         No </h4>
       <% } %>
       <button class="button btn-delete">Delete</button>
     </script>

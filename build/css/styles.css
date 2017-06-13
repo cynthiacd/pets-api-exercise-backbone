@@ -23,9 +23,9 @@ input {
   display: inline-block;
 }
 
-#completed-checkbox {
-  display: inline;
-}
+/*.button {
+  display: block;
+}*/
 
 label {
   display: inline;

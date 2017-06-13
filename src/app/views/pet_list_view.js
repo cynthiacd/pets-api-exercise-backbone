@@ -56,12 +56,8 @@ var PetListView = Backbone.View.extend({
   onSave: function(event){
     console.log("someone clicked the save button");
 
-    var vaccinated = this.$('#vaccinated').val();
-    if ( vaccinated === "on" ) {
-      vaccinated = true;
-    } else {
-      vaccinated = false;
-    }
+    var vaccinated = this.$('#vaccinated').prop('checked');
+    console.log(vaccinated);
 
     var petData = {
       "name": this.$('#name').val(),

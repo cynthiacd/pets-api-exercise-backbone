@@ -1,10 +1,10 @@
 import Backbone from 'backbone';
 // import _ from 'underscore';
-// import $ from 'jquery';
+import $ from 'jquery';
 
 var PetView = Backbone.View.extend({
   tagName: 'li',
-  // className:
+
   initialize: function(params){
     this.template = params.template;
     this.listenTo(this.model, "change", this.render);
@@ -20,6 +20,7 @@ var PetView = Backbone.View.extend({
 
   events: {
     'click button.btn-delete': 'onDelete',
+    'change input': 'onCheckbox',
     'click': 'onClick'
   },
 
@@ -32,8 +33,18 @@ var PetView = Backbone.View.extend({
     event.stopPropagation();
     console.log("clicked the delete button");
     this.model.destroy();
-  }
+  },
 
+  onCheckbox: function(event) {
+    event.stopPropagation();
+    // console.log("click on the checkbox");
+
+    var vaccinated = this.$('.vaccinated-checkbox').prop('checked');
+    console.log("vacc status: " + vaccinated);
+    this.model.set("vaccinated", vaccinated);
+
+    this.model.save();
+  }
 });
 
 export default PetView;
